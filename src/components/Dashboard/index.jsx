@@ -28,7 +28,7 @@ export function Dasboard() {
             </S.Form>
 
             <S.Logos>
-              <img src={spotifyImg} alt="spotify-log" />
+              <img src={spotifyImg} alt="spotify-log" color='red' />
               <img src={appleImg} alt="apple-log" />
               <img src={googleImg} alt="google-log" />
               <img src={pocketImg} alt="pocket-log" />

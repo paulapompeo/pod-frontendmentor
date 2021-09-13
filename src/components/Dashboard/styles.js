@@ -74,6 +74,13 @@ export const Form = styled.form`
     background: transparent;
     border: 0;
     margin: 14px 32px;
+    color: var(--white);
+
+    &::placeholder {
+      color: var(--ligh-gray);
+      font-size: 14px;
+      line-height: 28px;
+    }
   }
 
   button {
@@ -83,7 +90,15 @@ export const Form = styled.form`
     width: 162px;
     height: 46px;
     margin: 5px;
+    font-size: 14px;
+    line-height: 28px;
   }
+
+
+  /* transition: background-color 0.2s;
+  &:hover {
+    background: ${(0.2, `#ff9000`)};
+  } */
 `
 
 export const Logos = styled.div`
@@ -95,6 +110,6 @@ export const Logos = styled.div`
   justify-content: space-between;
 
   img {
-    color: red;
+    opacity: 0.7
   }
 `
