@@ -7,8 +7,18 @@ import logoImg from '../../assets/desktop/logo.svg'
 import dotsImg from '../../assets/desktop/bg-pattern-dots.svg'
 
 import * as S from './styles'
+import { useState } from 'react'
 
 export function Dasboard() {
+  const [email, setEmail] = useState('')
+  const [isEmailValid, setIsEmailValid] = useState(true)
+  console.log({isEmailValid})
+
+  const validateEmail = (email) => {
+    const regex = /\S+@\S+\.\S+/;
+    return setIsEmailValid(regex.test(email))
+  }
+
   return (
     <>
       <S.Container>
@@ -23,9 +33,24 @@ export function Dasboard() {
               Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
 
             <S.Form>
-              <input type="email" name="email" placeholder="Email address" />
-              <button type="button">Request Access</button>
+              <input 
+                type="email"
+                name="email"
+                placeholder="Email address"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+              />
+              <button 
+                type="button"
+                onClick={() => validateEmail(email)}
+              > 
+                Request Access
+              </button>
             </S.Form>
+
+            {!isEmailValid &&
+              <S.ErrorMessage>Oops! Please check your email</S.ErrorMessage>
+            }
 
             <S.Logos>
               <img src={spotifyImg} alt="spotify-log" color='red' />
@@ -35,7 +60,9 @@ export function Dasboard() {
             </S.Logos>
           </S.Content>
         </div>
-        <img src={dotsImg} alt="dots" className='dots-img' />
+        <div className='dots-img'>
+          <img src={dotsImg} alt="dots" />
+        </div>
       </S.Container>
     </>
   )
