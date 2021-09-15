@@ -2,34 +2,30 @@ import hostImg from '../../assets/desktop/image-host.jpg'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  /* max-width: 1275px; */
-  /* margin: 0 auto; */
   margin: 130px 0 130px 165px;
   height: 640px;
   background: url(${hostImg}) no-repeat right;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
 
   .layout {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
 
-  .img-logo {
-    margin-top: -28px;
-    width: 135px;
-    height: 56px;
+    .img-logo {
+      margin-top: -28px;
+      width: 135px;
+      height: 56px;
+    }
   }
 
   .dots-img {
     width: 232px;
     height: 104px;
     position:absolute;
-    bottom:0;
+    top:718px;
     right:0;
-    margin-bottom: -16px;
   }
 `
 
@@ -65,21 +61,32 @@ export const Form = styled.form`
   height: 56px;
   background: var(--dark-gray);
   border-radius: 28px;
-  margin: 40px 0 64px 0;
+  margin: 40px 0 8px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   input {
-    background: transparent;
+    background: var(--dark-gray);
     border: 0;
     margin: 14px 32px;
     color: var(--white);
+    font-size: 14px;
+    line-height: 28px;
+    font-family: 'Chivo';
+    font-weight: 700;
+    width: 188px;
+
+    -webkit-text-fill-color: var(--white) !important;
+    transition: background-color 5000s ease-in-out 0s;
 
     &::placeholder {
-      color: var(--ligh-gray);
+      color: var(--white);
+      opacity: 0.5;
       font-size: 14px;
       line-height: 28px;
+      font-family: 'Chivo';
+      font-weight: 700;
     }
   }
 
@@ -92,24 +99,41 @@ export const Form = styled.form`
     margin: 5px;
     font-size: 14px;
     line-height: 28px;
+    font-family: 'Chivo';
+    font-weight: 700;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+    background: #B3FFE2;
+    }
   }
+`
 
-
-  /* transition: background-color 0.2s;
-  &:hover {
-    background: ${(0.2, `#ff9000`)};
-  } */
+export const ErrorMessage = styled.span`
+  width: 157px;
+  height: 14px;
+  font-family: 'Chivo';
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FB3E3E;
+  margin-left: 32px;
 `
 
 export const Logos = styled.div`
-  width: 526px;
+  width: 536px;
   height: 29px;
+
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  position: absolute;
+  top: 741px;
+
   img {
-    opacity: 0.7
+    opacity: 0.4;
   }
 `

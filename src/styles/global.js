@@ -36,9 +36,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Chivo', sans-serif;
     font-weight: 300;
   }
-  input, button {
-    font-weight: 700;
-  } 
   button {
     cursor: pointer;
   }
